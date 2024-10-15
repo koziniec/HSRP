@@ -114,5 +114,4 @@ On a production switch/router this effectively saves your configuration.
 
 The next step is crucial...
 
-As you are emulating the routers in EVE you need to select More Actions -> Export all CFGs. This copies the configuration files from the individual routers into the EVE lab environment. Once this step is completed, it is safe to reboot the routers as their configuration will be restored.
-EVE allows you to choose whether to start the devices using a previously saved configuration or a blank state. You choose this function from the File:Startup-config-button-eve.png button in EVE. Check that the slide button is ON for your Distribution routers. You can also click on the routers name to see what configuration file EVE is storing for that device.
+As you are emulating the routers in EVE you need to select <b>More Actions -> Export all CFGs</b>. This copies the configuration files from the individual routers into the EVE lab environment. Once this step is completed, it is safe to reboot the routers as their configuration will be restored.

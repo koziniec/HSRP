@@ -28,17 +28,17 @@ At the end of this lab you should be able to:
 ## Summary of device configuration
 <pre>
  CORE ROUTER         IP ADDRESS     SUBNET MASK
- Ethernet 0/0    192.168.0.5    255.255.255.252
- Ethernet 0/1    192.168.0.9    255.255.255.252
+ Ethernet 0/0        192.168.0.5    255.255.255.252
+ Ethernet 0/1        192.168.0.9    255.255.255.252
  Loopback 0          192.168.0.1    255.255.255.252
  
  DISTRIBUTION_1      IP ADDRESS     SUBNET MASK
- Ethernet 0/0    192.168.10.2   255.255.255.0
- Ethernet 0/1    192.168.0.6    255.255.255.252 
+ Ethernet 0/0        192.168.10.2   255.255.255.0
+ Ethernet 0/1        192.168.0.6    255.255.255.252 
  
  DISTRIBUTION_2      IP ADDRESS     SUBNET MASK
- Ethernet 0/0    192.168.10.3   255.255.255.0
- Ethernet 0/1    192.168.0.10   255.255.255.252
+ Ethernet 0/0        192.168.10.3   255.255.255.0
+ Ethernet 0/1        192.168.0.10   255.255.255.252
  
  PC0  IP ADDRESS     SUBNET MASK    GATEWAY
      192.168.10.11  255.255.255.0  192.168.10.2*

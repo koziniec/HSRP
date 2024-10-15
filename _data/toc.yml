@@ -1,0 +1,25 @@
+- title: Documentation
+  url: docs
+  links:
+    - title: "Lab Exercise"
+      url: "docs/lab-exercise"
+      children:
+        - title: Overview
+          url: "docs/lab-exercise#overview"
+        - title: "Learning Objectives"
+          url: "docs/lab-exercise#objectives"
+        - title: Topology
+          url: "docs/lab-exercise#topology"
+        - title: Steps
+          url: "docs/lab-exercise#steps"
+    - title: "EVE Topology Files"
+      url: "docs/eve/eve-topology"
+      children:
+        - title: Initial Topology
+          url: "docs/eve/initial.zip"
+        - title: Final Configuration
+          url: "docs/eve/final.zip"
+    - title: "About"
+      url: "about"
+    - title: "News"
+      url: "news"

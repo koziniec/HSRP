@@ -76,21 +76,23 @@ We will use OSPF routing in this exercise. Advertise all the networks using the 
 <pre>
  <b>CORE ROUTER</b>
  interface ethernet 0/0
-   ip ospf area 0
- Loopback 0
-   ip ospf area 0
+   ip ospf 1 area 0
+ interface ethernet 0/1
+   ip ospf 1 area 0
+ interface Loopback 0
+   ip ospf 1 area 0
  
  <b>DISTRIBUTION 1</b>
  interface ethernet 0/0
-   ip ospf area 0
+   ip ospf 1 area 0
  interface ethernet 0/1
-   ip ospf area 0
+   ip ospf 1 area 0
  
  <b>DISTRIBUTION 2</b>
  interface ethernet 0/0
-   ip ospf area 0
+   ip ospf 1 area 0
  interface ethernet 0/1
-   ip ospf area 0
+   ip ospf 1 area 0
  </pre>
 
 ### Step 5 - Testing layer 3

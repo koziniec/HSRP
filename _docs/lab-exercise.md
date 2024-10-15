@@ -197,3 +197,10 @@ Ethernet0/0 - Group 1
  <b>Priority 100 (default 100)</b>
  Group name is hsrp-Et0/0-1 (default)
 </pre>
+
+
+### Step 9 - Configure hosts for HSRP
+In order to make use of the highly available virtual gateway, hosts should use the Virtual router address as their gateway.
+
+- Change the gateway address of the hosts to 192.168.10.1
+- Verify that the virtual gateway works by starting a continuous ping from each PC to the loopback (192.168.0.1).

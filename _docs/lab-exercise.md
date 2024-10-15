@@ -216,3 +216,33 @@ Router#<b>copy running startup</b>
 <b>The next step is crucial...</b>
 
 As you are emulating the routers in EVE you need to select <b>More Actions -> Export all CFGs</b>.
+
+### Step 12 - Failure of a physical gateway router with HSRP
+We will now simulate a variety of failures so that we can observe the operation of HSRP.
+
+- Continue to ping from each PC to the loopback so we can observe any lose of connectivity.
+- Turn off the active router, which should be Distribution1, to simulate a failure.
+- Observe the pings from the hosts and the command line messages on the HSRP standby router.<br>
+You should see the standby router change to active and there should only be a brief interruption to the packet flow.
+
+The duration of the interruption is longer in EVE than it would be if using real equipment. With real equipment, turning off the router would also remove the electrical connection to the attached links. As a link-state-protocol, OSPF recognises the loss of connectivity and recalculates a new path immediately. Unfortunately EVE does not simulate the electrical properties of the link and OSPF must wait for a number of lost hellos with its neighbour before declaring it lost.
+
+<b>Focus question: How could you reduce the period of disruption?</b>
+
+
+___
+
+- Restore power to the failed router to simulate its repair and return to service.<br>
+Because we configured "pre-empt" it should resume the active HSRP role.
+- Observe the continuous pings from the hosts. It is likely that there will be a brief interruption. For this reason you should give consideration as to whether "preempt" is desirable in your network.
+
+To reinforce the concept of a physical router taking on the role of a virtual router try the following:
+
+- From the Core router, use the command line to Telnet to the virtual router (192.168.10.1). The password will be "cisco" as this is what you configured under "line vty 0 4".
+
+Note the hostname that is displayed. This corresponds to the physical router that is currently actively implementing the HSRP virtual router.
+
+- "exit" the Telnet session on the Core router and then "STOP" the active physical router and the Telnet to the virtual router again.
+The hostname should have changed as the standby router is now taking responsibility for the virtual router at 192.168.10.1.
+
+- Restore power to the failed distribution router and exit out of any Telnet sessions.

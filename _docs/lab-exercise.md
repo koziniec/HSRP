@@ -126,8 +126,7 @@ On each PC open a command-line window and ping the Core Router loopback (192.168
 If you need to stop the ping you can break out with <shift><ctrl><6>.
 
 <pre>
- PC#<b>ping ip 192.168.0.1 repeat 1000000
-</b>
+ PC#<b>ping ip 192.168.0.1 repeat 1000000</b>
 </pre>
 It should be reliable and stable.
 

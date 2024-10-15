@@ -57,7 +57,8 @@ We will begin by naming the devices, addressing the interfaces and allowing Teln
 - Configure the following IP addresses on the devices and remember to use the "no shutdown" command.
 
 ### Step 2
-<pre>
-Router><b>enable</b>
-Router#
+Router(config)#<b>line vty 0 4</b>
+Router(config-line)#<b>password cisco</b>
+Router(config-line)#<b>login</b>
+Router(config-line)#<b>transport input telnet</b>
 </pre>

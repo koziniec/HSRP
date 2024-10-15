@@ -142,13 +142,13 @@ Turn Distribution1 back on and wait for connectivity to resume. Using physical C
 
 - On each of the distribution routers add the following commands to allow us to Telnet to them later in the lab.
 <pre>
-Distibution1(config)#interface e 0/0
-Distibution1(config-if)#standby 1 ip 192.168.10.1
-Distibution1(config-if)#standby 1 priority 105
-Distibution1(config-if)#standby 1 preempt
+Distibution1(config)#<b>interface eth 0/0</b>
+Distibution1(config-if)#<b>standby 1 ip 192.168.10.1</b>
+Distibution1(config-if)#<b>standby 1 priority 105</b>
+Distibution1(config-if)#<b>standby 1 preempt</b>
 </pre>
 <pre>
-Distibution2(config)#interface e 0/0
-Distibution2(config-if)#standby 1 ip 192.168.10.1
-Distibution2(config-if)#standby 1 preempt
+Distibution2(config)#<b>interface eth 0/0</b>
+Distibution2(config-if)#<b>standby 1 ip 192.168.10.1</b>
+Distibution2(config-if)#<b>standby 1 preempt</b>
 </pre>

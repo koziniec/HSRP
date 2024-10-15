@@ -246,3 +246,50 @@ Note the hostname that is displayed. This corresponds to the physical router tha
 The hostname should have changed as the standby router is now taking responsibility for the virtual router at 192.168.10.1.
 
 - Restore power to the failed distribution router and exit out of any Telnet sessions.
+
+### Step 13 - HSRP, upstream link failure and interface tracking
+We will now examine issues that occur when the gateway router experiences connectivity problems rather than a complete failure.
+
+- From the command line on one of the PCs perform a traceroute to see the path that packets take to 192.168.0.1.
+- Examine the topology and follow the path packets are taking to the loopback.
+<pre>
+ [PC0]
+VPCS> <b>trace 192.168.0.1</b>
+trace to 192.168.0.1, 8 hops max, press Ctrl+C to stop
+ 1   192.168.10.2   0.595 ms  0.560 ms  0.457 ms
+ 2   *192.168.0.5   1.050 ms (ICMP type:3, code:3, Destination port unreachable)  *
+
+VPCS> 
+</pre>
+
+You should see they are flowing through Distribution1 as it is currently the active HSRP router.
+
+- Now shutdown e0/1 on Distribution1 to simulate a link failure to the core router.
+- Repeat the tracert to 192.168.0.1
+
+<pre>
+[PC0]
+VPCS> <b>trace 192.168.0.1</b>
+trace to 192.168.0.1, 8 hops max, press Ctrl+C to stop
+ 1   192.168.10.2   1.451 ms  0.739 ms  0.554 ms
+ 2   192.168.10.3   0.940 ms  0.799 ms  0.792 ms
+ 3   *192.168.0.9   1.222 ms (ICMP type:3, code:3, Destination port unreachable)  * 
+
+VPCS>
+</pre>
+
+- Once again follow the path packets are taking on the topology.
+
+You should find that the packets are taking an inefficient path from Distribution1 to Distribution2 the Core. The problem is that Distribution1 is the HSRP active router. It would be better if Distribution2 took over this role.
+
+Distribution1 remains active because it has the highest HSRP priority and it has a working Ethernet link between itself and Distribution2 which allows hello packets to be exchanged. So as far as HSRP is concerned there has been no failure. HSRP allows for this scenario with the HSRP track command.
+
+- Configure the commands below on Distribution1 and consider carefully the meaning of each command.
+
+This feature makes use of a Cisco technology called "object tracking". The first command track 1 interface Ethernet 0/1 line-protocol creates an object to be tracked and gives it an object ID of "1". The object is defined as the line-protocol on Ethernet 0/1. The line-protocol is "Ethernet". So the status of Ethernet (up or down) is what is being tracked. The final command standby 1 track 1 decrement 15 links HSRP (standby), virtual router 1 with object number 1 (created previously). When the object is triggered, the HSRP priority is decremented by 15. As the priority on Distribution1 is 105, a link failure on Ethernet 0/1 will reduce this by 15 producing an overall priority of 90. As Distribution2 is configured with the default priority (100) it becomes the Active router. This leads to a more efficient traffic flow.
+
+<pre></pre>
+Dist1(config)# <b>track 1 interface Ethernet 0/1 line-protocol</b>
+Dist1(config-track)# <b>exit</b>
+Dist1(config)# <b>interface Ethernet 0/0</b>
+Dist1(config-if)# <b>standby 1 track 1 decrement 15</b>

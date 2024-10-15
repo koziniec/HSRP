@@ -41,10 +41,10 @@ At the end of this lab you should be able to:
  Ethernet 0/1        192.168.0.10   255.255.255.252
  
  PC0  IP ADDRESS     SUBNET MASK    GATEWAY
-     192.168.10.11  255.255.255.0  192.168.10.2*
+ 192.168.10.11       255.255.255.0  192.168.10.2*
  
  PC1  IP ADDRESS     SUBNET MASK    GATEWAY
-     192.168.10.12  255.255.255.0  192.168.10.3*
+ 192.168.10.12       255.255.255.0  192.168.10.3*
 </pre>
  
  *Notice that each PC is using a different gateway.  This is deliberate.

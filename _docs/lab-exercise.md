@@ -58,7 +58,7 @@ We will begin by naming the devices, addressing the interfaces and allowing Teln
 - Configure a meaningful hostname on each router. It is particularly important on the Distribution layer devices because we will use the hostname to determine which router is the active HSRP device later in the exercise.
 - Configure the following IP addresses on the devices and remember to use the "no shutdown" command.
 
-### Step 2
+### Step 2 - Enable remote management with VTY
 - On each of the distribution routers add the following commands to allow us to Telnet to them later in the lab.
 <pre>
 Router(config)#<b>line vty 0 4</b>
@@ -66,3 +66,29 @@ Router(config-line)#<b>password cisco</b>
 Router(config-line)#<b>login</b>
 Router(config-line)#<b>transport input telnet</b>
 </pre>
+
+### Step 3 - Testing OSI layer 1 and 2
+At this point you should be able to ping between directly connected interfaces (within the same subnet). This is a test of the first two layers of the OSI model. You won't be able to ping end-to-end because we don't yet have any routing (layer 3 of the OSI).
+
+### Step 4 - Add routing
+We will use OSPF routing in this exercise. Advertise all the networks using the following commands. Although this lab is not about OSPF you should take the time to understand why these commands are necessary. As this is a small network, we will only implement area zero.
+
+<pre>
+ <b>CORE ROUTER</b>
+ interface ethernet 0/0
+   ip ospf area 0
+ Loopback 0
+   ip ospf area 0
+ 
+ <b>DISTRIBUTION_1</b>
+ interface ethernet 0/0
+   ip ospf area 0
+ interface ethernet 0/1
+   ip ospf area 0
+ 
+ <b>DISTRIBUTION_2</b>
+ interface ethernet 0/0
+   ip ospf area 0
+ interface ethernet 0/1
+   ip ospf area 0
+ </pre>

@@ -59,7 +59,7 @@ We will begin by naming the devices, addressing the interfaces and allowing Teln
 - Configure the IP addresses shown above on the devices and remember to use the "no shutdown" command.
 
 ### Step 2 - Enable remote management with VTY
-- On each of the distribution routers add the following commands to allow us to Telnet to them later in the lab.
+- On each of the <b>distribution</b> routers add the following commands to allow us to Telnet to them later in the lab.
 <pre>
 Router(config)#<b>line vty 0 4</b>
 Router(config-line)#<b>password cisco</b>

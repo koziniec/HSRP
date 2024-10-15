@@ -26,6 +26,7 @@ At the end of this lab you should be able to:
 
 
 ## Summary of device configuration
+<pre>
  CORE ROUTER         IP ADDRESS     SUBNET MASK
  Ethernet 0/0    192.168.0.5    255.255.255.252
  Ethernet 0/1    192.168.0.9    255.255.255.252
@@ -44,6 +45,7 @@ At the end of this lab you should be able to:
  
  PC1  IP ADDRESS     SUBNET MASK    GATEWAY
      192.168.10.12  255.255.255.0  192.168.10.3*
+</pre>
  
  *Notice that each PC is using a different gateway.  This is deliberate.
 

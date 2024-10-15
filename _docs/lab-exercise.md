@@ -118,12 +118,16 @@ The next step is crucial...
 
 As you are emulating the routers in EVE you need to select <b>More Actions -> Export all CFGs</b>. This copies the configuration files from the individual routers into the EVE lab environment. Once this step is completed, it is safe to reboot the routers as their configuration will be restored.
 
-### Step 7 - Gateway failure without HSRP   ******** Fix ping **************
+### Step 7 - Gateway failure without HSRP
 To illustrate the need for first hop redundancy (HSRP) we will look at the effects of a gateway failure with no HSRP.
 
-On each PC open a command-line window and ping the Core Router loopback (192.168.0.1) continuously with the following command.
+On each PC open a command-line window and ping the Core Router loopback (192.168.0.1) continuously with the following command.  This is an "extended ping" that allows extra parameters.  You must be in "priviledge exec" (enable) to use this command.  Here we are specifying a million pings (continuous).
+
+If you need to stop the ping you can break out with <shift><ctrl><6>.
+
 <pre>
- <b>ping 192.168.0.1 -t</b>
+ PC#<b>ping ip 192.168.0.1 repeat 1000000
+</b>
 </pre>
 It should be reliable and stable.
 

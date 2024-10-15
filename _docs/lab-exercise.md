@@ -98,6 +98,7 @@ At this point you should have end-to-end connectivity.
 
 - Check that devices can ping any IP address. In particular you should be able to ping from the command-line on the PCs to the Loopback interface on the Core Router (192.168.0.1).
   - If you have trouble, start by making sure that you have point-to-point connectivity between directly connected interfaces as required by the previous testing step. Layer 3 is carried by layers 1 and 2 so they need to work first.
+    
   - If you still have trouble, use the command "show ip route" on each router. You should see at least some routes with an "o" next to them indicating that OSPF is exchanging routes.
   
 There is no point in moving forward in this lab if you don't have full connectivity at this point. You need a solid foundation to build on. If you are completing this lab on your own and still have problems you can download the completed EVE file to compare with your own. But please make sure you overcome any hurdles you have with the basics.

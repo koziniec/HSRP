@@ -32,11 +32,11 @@ At the end of this lab you should be able to:
  Ethernet 0/1        192.168.0.9    255.255.255.252
  Loopback 0          192.168.0.1    255.255.255.252
  
- <b>DISTRIBUTION_1      IP ADDRESS     SUBNET MASK</b>
+ <b>DISTRIBUTION 1      IP ADDRESS     SUBNET MASK</b>
  Ethernet 0/0        192.168.10.2   255.255.255.0
  Ethernet 0/1        192.168.0.6    255.255.255.252 
  
- <b>DISTRIBUTION_2      IP ADDRESS     SUBNET MASK</b>
+ <b>DISTRIBUTION 2      IP ADDRESS     SUBNET MASK</b>
  Ethernet 0/0        192.168.10.3   255.255.255.0
  Ethernet 0/1        192.168.0.10   255.255.255.252
  
@@ -80,13 +80,13 @@ We will use OSPF routing in this exercise. Advertise all the networks using the 
  Loopback 0
    ip ospf area 0
  
- <b>DISTRIBUTION_1</b>
+ <b>DISTRIBUTION 1</b>
  interface ethernet 0/0
    ip ospf area 0
  interface ethernet 0/1
    ip ospf area 0
  
- <b>DISTRIBUTION_2</b>
+ <b>DISTRIBUTION 2</b>
  interface ethernet 0/0
    ip ospf area 0
  interface ethernet 0/1

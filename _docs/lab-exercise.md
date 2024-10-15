@@ -210,7 +210,7 @@ In order to make use of the highly available virtual gateway, hosts should use t
 - Change the gateway address of the hosts to 192.168.10.1<br><br>
 Note: In 2024 this is <b>ip route 0.0.0.0 0.0.0.0 192.168.10.1</b> as we are using routers to pretend to be a host.
 
-</b>Super important !!!!! - Remove old routes with no ip route 0.0.0.0 0.0.0.0 192.168.10.X</b>  
+<b>Super important !!!!! - Remove old routes with no ip route 0.0.0.0 0.0.0.0 192.168.10.X</b>  
 - Verify that the virtual gateway works by starting a continuous ping from each PC to the loopback (192.168.0.1).
 
 ### Step 11 - Save everything (again)

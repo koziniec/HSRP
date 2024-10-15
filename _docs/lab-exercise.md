@@ -56,7 +56,7 @@ At the end of this lab you should be able to:
 We will begin by naming the devices, addressing the interfaces and allowing Telnet to the distribution routers. Note that there is no configuration required for the Switch. In this lab we are solely concerned with routing.
 
 - Configure a meaningful hostname on each router. It is particularly important on the Distribution layer devices because we will use the hostname to determine which router is the active HSRP device later in the exercise.
-- Configure the following IP addresses on the devices and remember to use the "no shutdown" command.
+- Configure the IP addresses shown above on the devices and remember to use the "no shutdown" command.
 
 ### Step 2 - Enable remote management with VTY
 - On each of the distribution routers add the following commands to allow us to Telnet to them later in the lab.

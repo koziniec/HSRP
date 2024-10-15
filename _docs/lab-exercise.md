@@ -115,3 +115,18 @@ On a production switch/router this effectively saves your configuration.
 The next step is crucial...
 
 As you are emulating the routers in EVE you need to select <b>More Actions -> Export all CFGs</b>. This copies the configuration files from the individual routers into the EVE lab environment. Once this step is completed, it is safe to reboot the routers as their configuration will be restored.
+
+### Step 7 - Gateway failure without HSRP   ******** Fix ping **************
+To illustrate the need for first hop redundancy (HSRP) we will look at the effects of a gateway failure with no HSRP.
+
+On each PC open a command-line window and ping the Core Router loopback (192.168.0.1) continuously with the following command.
+<pre>
+ <b>ping 192.168.0.1 -t</b>
+</pre>
+It should be reliable and stable.
+
+Now right-click on Distribution1 router icon and select the "STOP". This simulates a catastrophic failure of the router.
+Observe the pings from the PCs. You should see that PC0 fails because it is configured to use Distribution1 as its gateway. PC1 should not be affected as it is configured to use Distribution2 as a default gateway. Note: You may find that both hosts have their communication disrupted. Wait a minute or so and PC1's communication should be restored. The reason this may occur is that traffic from PC1 travels via Distribution2 but the return path may still be via Distribution1. After a period of time, OSPF reroutes the return traffic. This isn't an issue with the gateway, but rather an OSPF routing issue.
+At this point, you should reflect on the different ways you could address the problem faced by PC0 and restore its connectivity. Without intervention, PC0 will not have connectivity. Many of the solutions will not be transparent to the user.
+
+Turn Distribution1 back on and wait for connectivity to resume. Using physical Cisco routers if you watch the LEDs (orange - blocking) you would notice that Spanning Tree is adding to the delay in restoring connectivity. The use of spanning-tree "portfast" to speed up this process could be considered in real implementation.

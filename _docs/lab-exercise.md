@@ -127,8 +127,8 @@ It should be reliable and stable.
 
 - Right-click on Distribution1 router icon and select the "STOP". 
 This simulates a catastrophic failure of the router.
- - Observe the pings from the PCs. You should see that PC0 fails because it is configured to use Distribution1 as its gateway.
- - PC1 should not be affected as it is configured to use Distribution2 as a default gateway.
+  - Observe the pings from the PCs. You should see that PC0 fails because it is configured to use Distribution1 as its gateway.
+  - PC1 should not be affected as it is configured to use Distribution2 as a default gateway.
 
 Note: You may find that both hosts have their communication disrupted. Wait a minute or so and PC1's communication should be restored. The reason this may occur is that traffic from PC1 travels via Distribution2 but the return path may still be via Distribution1. After a period of time, OSPF reroutes the return traffic. This isn't an issue with the gateway, but rather an OSPF routing issue.
 

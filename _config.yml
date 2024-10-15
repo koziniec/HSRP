@@ -15,7 +15,7 @@ encoding: utf-8
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Hot Standy Routing Protocol
+title: Hot Standby Routing Protocol
 email: t{dot}koziniec(at)murdoch[dot]edu{au}
 author: Terry Koziniec
 description: > # this means to ignore newlines until "baseurl:"

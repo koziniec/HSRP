@@ -3,7 +3,7 @@ layout: page
 title: EVE Labs
 permalink: /
 ---
-# Lab Title
+# Hot Standby Routing Protocol (HSRP)
 ![{{ site.baseurl }}/assets/img/topology.png]({{ site.baseurl }}/assets/img/topology.png)
 ### Completing this lab
 - This lab is intended to be completed using the provided EVE topology file.  Access the file via the "EVE topology Files" link in the navigation bar on the left.

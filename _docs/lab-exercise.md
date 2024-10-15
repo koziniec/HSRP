@@ -102,3 +102,17 @@ At this point you should have end-to-end connectivity.
   - If you still have trouble, use the command "show ip route" on each router. You should see at least some routes with an "o" next to them indicating that OSPF is exchanging routes.
   
 <b>There is no point in moving forward in this lab if you don't have full connectivity at this point. You need a solid foundation to build on. If you are completing this lab on your own and still have problems you can download the completed EVE file to compare with your own. But please make sure you overcome any hurdles you have with the basics.</b>
+
+### Step 6 - Save your configurations
+This would be a good time to save your router and EVE lab states. We will be shutting down routers to simulate failures. Just like real life, if you pull the plug and didn't save the configuration you will need to re-enter it!
+
+Although this isn't necessary on EVE, I recommend that on each router save the configuration to NVRAM (Flash) with:
+<pre>
+ Router#<b>copy running startup</b>
+</pre>
+On a production switch/router this effectively saves your configuration.
+
+The next step is crucial...
+
+As you are emulating the routers in EVE you need to select More Actions -> Export all CFGs. This copies the configuration files from the individual routers into the EVE lab environment. Once this step is completed, it is safe to reboot the routers as their configuration will be restored.
+EVE allows you to choose whether to start the devices using a previously saved configuration or a blank state. You choose this function from the File:Startup-config-button-eve.png button in EVE. Check that the slide button is ON for your Distribution routers. You can also click on the routers name to see what configuration file EVE is storing for that device.

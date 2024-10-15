@@ -127,6 +127,7 @@ It should be reliable and stable.
 
 - Right-click on Distribution1 router icon and select the "STOP". 
 </br>This simulates a catastrophic failure of the router.
+
   - Observe the pings from the PCs. You should see that PC0 fails because it is configured to use Distribution1 as its gateway.
   - PC1 should not be affected as it is configured to use Distribution2 as a default gateway.
 

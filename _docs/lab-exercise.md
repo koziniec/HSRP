@@ -45,9 +45,11 @@ At the end of this lab you should be able to:
  
  <b>PC1  IP ADDRESS     SUBNET MASK    GATEWAY</b>
  192.168.10.12       255.255.255.0  192.168.10.3*
+ 
+  *Notice that each PC is using a different gateway.  This is deliberate.
 </pre>
  
- *Notice that each PC is using a different gateway.  This is deliberate.
+
 
 ## Steps
 ### Step 1 - Basic configuration
@@ -57,6 +59,7 @@ We will begin by naming the devices, addressing the interfaces and allowing Teln
 - Configure the following IP addresses on the devices and remember to use the "no shutdown" command.
 
 ### Step 2
+- On each of the distribution routers add the following commands to allow us to Telnet to them later in the lab.
 <pre>
 Router(config)#<b>line vty 0 4</b>
 Router(config-line)#<b>password cisco</b>

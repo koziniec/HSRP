@@ -121,7 +121,7 @@ As you are emulating the routers in EVE you need to select <b>More Actions -> Ex
 ### Step 7 - Gateway failure without HSRP
 To illustrate the need for first hop redundancy (HSRP) we will look at the effects of a gateway failure with no HSRP.
 
-On each PC open a command-line window and ping the Core Router loopback (192.168.0.1) continuously with the following command.  This is an "extended ping" that allows extra parameters.  You must be in "priviledge exec" (enable) to use this command.  Here we are specifying a million pings (continuous).
+On <b>each</b> PC open a command-line window and ping the Core Router loopback (192.168.0.1) continuously with the following command.  This is an "extended ping" that allows extra parameters.  You must be in "priviledge exec" (enable) to use this command.  Here we are specifying a million pings (continuous).
 
 If you need to stop the ping you can break out with <shift><ctrl><6>.
 

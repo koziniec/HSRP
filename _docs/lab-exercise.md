@@ -101,4 +101,4 @@ At this point you should have end-to-end connectivity.
     
   - If you still have trouble, use the command "show ip route" on each router. You should see at least some routes with an "o" next to them indicating that OSPF is exchanging routes.
   
-There is no point in moving forward in this lab if you don't have full connectivity at this point. You need a solid foundation to build on. If you are completing this lab on your own and still have problems you can download the completed EVE file to compare with your own. But please make sure you overcome any hurdles you have with the basics.
+<b>There is no point in moving forward in this lab if you don't have full connectivity at this point. You need a solid foundation to build on. If you are completing this lab on your own and still have problems you can download the completed EVE file to compare with your own. But please make sure you overcome any hurdles you have with the basics.</b>

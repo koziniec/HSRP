@@ -152,3 +152,10 @@ Distibution2(config)#<b>interface eth 0/0</b>
 Distibution2(config-if)#<b>standby 1 ip 192.168.10.1</b>
 Distibution2(config-if)#<b>standby 1 preempt</b>
 </pre>
+
+When you configure the standby commands you will see the HSRP roles in the messages displayed on the command line.
+
+<b>Focus question: Which router will take on the active role and why?</b>
+
+
+_______________

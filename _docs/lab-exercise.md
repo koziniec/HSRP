@@ -288,8 +288,9 @@ Distribution1 remains active because it has the highest HSRP priority and it has
 
 This feature makes use of a Cisco technology called "object tracking". The first command track 1 interface Ethernet 0/1 line-protocol creates an object to be tracked and gives it an object ID of "1". The object is defined as the line-protocol on Ethernet 0/1. The line-protocol is "Ethernet". So the status of Ethernet (up or down) is what is being tracked. The final command standby 1 track 1 decrement 15 links HSRP (standby), virtual router 1 with object number 1 (created previously). When the object is triggered, the HSRP priority is decremented by 15. As the priority on Distribution1 is 105, a link failure on Ethernet 0/1 will reduce this by 15 producing an overall priority of 90. As Distribution2 is configured with the default priority (100) it becomes the Active router. This leads to a more efficient traffic flow.
 
-<pre></pre>
+<pre>
 Dist1(config)# <b>track 1 interface Ethernet 0/1 line-protocol</b>
 Dist1(config-track)# <b>exit</b>
 Dist1(config)# <b>interface Ethernet 0/0</b>
 Dist1(config-if)# <b>standby 1 track 1 decrement 15</b>
+</pre>

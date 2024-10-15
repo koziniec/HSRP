@@ -164,7 +164,7 @@ _______________
 - Use the "show standby" command examine the status of HSRP on Distribution1 and Distribution2.
 
 <pre>
- Distibution1#<b>show standby</b>
+Distibution1#<b>show standby</b>
 Ethernet0/0 - Group 1
  <b>State is Active</b>
    12 state changes, last state change 00:47:49
@@ -181,19 +181,19 @@ Ethernet0/0 - Group 1
 </pre>
 
 <pre>
-Distribution2#show standby
+Distribution2#<b>show standby</b>
 Ethernet0/0 - Group 1
- State is Standby
+ <b>State is Standby</b>
    14 state changes, last state change 00:48:08
- Virtual IP address is 192.168.10.1
+ <b>Virtual IP address is 192.168.10.1</b>
  Active virtual MAC address is 0000.0C07.AC01
    Local virtual MAC address is 0000.0C07.AC01 (v1 default)
  Hello time 3 sec, hold time 10 sec
    Next hello sent in 1.342 secs
  Preemption enabled
- Active router is 192.168.10.2, priority 105 (expires in 7 sec)
+ <b>Active router is 192.168.10.2, priority 105</b> (expires in 7 sec)
    MAC address is 0000.0C07.AC01
- Standby router is local
- Priority 100 (default 100)
+ <b>Standby router is local</b>
+ <b>Priority 100 (default 100)</b>
  Group name is hsrp-Et0/0-1 (default)
 </pre>

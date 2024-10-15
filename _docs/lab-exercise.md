@@ -160,7 +160,7 @@ Distibution2(config-if)#<b>standby 1 preempt</b>
 
 When you configure the standby commands you will see the HSRP roles in the messages displayed on the command line.
 
-<b>Focus question: Which router will take on the active role and why?</b></br></br>
+<b>Focus question: Which router will take on the active role and why?</b><br><br>
 
 
 _______________

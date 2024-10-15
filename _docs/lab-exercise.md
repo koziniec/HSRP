@@ -207,7 +207,8 @@ Ethernet0/0 - Group 1
 ### Step 10 - Configure hosts for HSRP
 In order to make use of the highly available virtual gateway, hosts should use the Virtual router address as their gateway.
 
-- Change the gateway address of the hosts to 192.168.10.1
+- Change the gateway address of the hosts to 192.168.10.1<br>
+Note: In 2024 this is <b>ip route 0.0.0.0 0.0.0.0 192.168.10.1</b> as we are using routers to pretend to be a host.
 - Verify that the virtual gateway works by starting a continuous ping from each PC to the loopback (192.168.0.1).
 
 ### Step 11 - Save everything (again)
